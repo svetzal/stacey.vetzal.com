@@ -3,12 +3,27 @@ import _ from "lodash"
 
 import Layout from "gatsby-theme-blog/src/components/layout"
 import { graphql, Link } from "gatsby"
+import Footer from "../gatsby-theme-blog/components/home-footer"
 
-export default ({ data, location, pathContext }) => {
-  const title = _.capitalize(pathContext.tag)
-  const tags = data.allMdxBlogPost.group.filter(t => t.tag == pathContext.tag)
+export default ({
+                  data: {
+                    posts: {
+                      group,
+                    },
+                    site: {
+                      siteMetadata: {
+                        title,
+                        social,
+                      },
+                    },
+                  },
+                  pathContext,
+                  ...props
+                }) => {
+  const tagName = _.capitalize(pathContext.tag)
+  const tags = group.filter(t => t.tag === pathContext.tag)
   return (
-    <Layout location={location} title={`Posts under ${title}`}>
+    <Layout location={props.location} title={`${title}: ${tagName}`}>
       {tags.map(p => (
         <div>
           <ul>
@@ -21,13 +36,14 @@ export default ({ data, location, pathContext }) => {
           </ul>
         </div>
       ))}
+      <Footer socialLinks={social}/>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
     query {
-        allMdxBlogPost {
+        posts: allMdxBlogPost {
             group(field: tags) {
                 tag: fieldValue
                 totalCount
@@ -36,6 +52,15 @@ export const pageQuery = graphql`
                     tags
                     title
                     excerpt
+                }
+            }
+        }
+        site {
+            siteMetadata {
+                title
+                social {
+                    name
+                    url
                 }
             }
         }
