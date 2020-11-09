@@ -11,7 +11,7 @@ const Layout = ({ children, ...props }) => {
   return (
     <Styled.root>
       <Helmet>
-        <link rel="stylesheet" href={webfontURL} />
+        <link rel="stylesheet" href={webfontURL}/>
       </Helmet>
       <Header {...props} />
       <div>
@@ -20,7 +20,7 @@ const Layout = ({ children, ...props }) => {
             maxWidth: `container`,
             mx: `auto`,
             px: 3,
-            py: 4,
+            py: 4
           })}
         >
           {children}

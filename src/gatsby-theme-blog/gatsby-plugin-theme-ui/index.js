@@ -13,5 +13,6 @@ export default {
         text: blueGray,
         primary: darkBlue,
         heading: blueGray,
+        inverted: lightBlue,
     },
 }
