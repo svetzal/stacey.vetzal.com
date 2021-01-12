@@ -7042,10 +7042,10 @@ gatsby-telemetry@^1.8.0:
     node-fetch "^2.6.1"
     uuid "3.4.0"
 
-gatsby-theme-blog-core@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-blog-core/-/gatsby-theme-blog-core-2.0.2.tgz#8d5d26e4217ead08983284485b84258898abec66"
-  integrity sha512-h14F6fdXLZMalivT7HmCCBbBIu0iS0oCxmvMPfWkJIb7wqllIram/FHhYNhcQYNzSPlDa09S2c5cAJUIQ/XG7w==
+gatsby-theme-blog-core@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-blog-core/-/gatsby-theme-blog-core-2.0.4.tgz#bc0a8fcfc40275a5b7f9fa790118ef4538ba273e"
+  integrity sha512-UyOZBRjm1Ab2Em/baHNInn6V+gd6qxuVWn9dMrPygvuIkXOwrli/QQ/9I2Vzlq/BXX0DiF5qpwLlswSLipJ9zA==
   dependencies:
     "@mdx-js/mdx" "^1.6.14"
     gatsby-core-utils "^1.3.13"
@@ -7058,10 +7058,10 @@ gatsby-theme-blog-core@^2.0.2:
     gatsby-transformer-sharp "^2.5.11"
     remark-slug "^5.1.2"
 
-gatsby-theme-blog@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-blog/-/gatsby-theme-blog-2.0.2.tgz#57ea07b0f629d3d99e31a628d7b028bc2ffee91e"
-  integrity sha512-XLviF2wq/jw0W1Yn0hLfxwbho5ttuj6Q49wAcAtmWcB08LMnx1E9v4KaTlf9R/t3S12cHnqdVVpALUvr33PN2A==
+gatsby-theme-blog@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-blog/-/gatsby-theme-blog-2.0.5.tgz#fb79e4c371ebf4bdac7b96865bce1a9d38c6a4fd"
+  integrity sha512-Rd8roWmkd4PtgCLLoPxNbCosOFUI73K0CVE0xawr0GhGk9xD5lk8AR+g5QK6LVYbhQnWl3PI+57BncCoMLpe1w==
   dependencies:
     "@reach/skip-nav" "^0.10.2"
     "@theme-ui/prism" "0.4.0-alpha.3"
@@ -7071,16 +7071,16 @@ gatsby-theme-blog@^2.0.0:
     gatsby-plugin-react-helmet "^3.3.10"
     gatsby-plugin-theme-ui "0.4.0-alpha.3"
     gatsby-plugin-twitter "^2.3.10"
-    gatsby-theme-blog-core "^2.0.2"
-    gatsby-theme-ui-preset "^1.0.2"
+    gatsby-theme-blog-core "^2.0.4"
+    gatsby-theme-ui-preset "^1.0.4"
     mdx-utils "0.2.0"
     react-helmet "^5.2.1"
     theme-ui "0.4.0-alpha.3"
 
-gatsby-theme-ui-preset@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-ui-preset/-/gatsby-theme-ui-preset-1.0.2.tgz#e87cdbb169dd52c0c46f66f2751e5d677a8bdb62"
-  integrity sha512-WF72PoC2n2oY9tVANpYENvNqoYrPeG55y8DzkTpwxDuOoyZojk5Isx3zXm+TegeWyWpkHxMAtKrDPdgCXQLlew==
+gatsby-theme-ui-preset@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-ui-preset/-/gatsby-theme-ui-preset-1.0.4.tgz#c53be97c8f1b1ec4ac0581beafe0dcfae8caa1dd"
+  integrity sha512-0WchZOCUFiQsLKjG+pzvcMBdbqPClhf8Qho5CCzFRavYBNb1cXecbizXWHR88iPEt3XSDcrfX7W4N0ggjofnzQ==
   dependencies:
     theme-ui "0.4.0-alpha.3"
 
