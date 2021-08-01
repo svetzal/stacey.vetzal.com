@@ -10,6 +10,7 @@ module.exports = {
     title: `Stacey on Software`,
     author: `Stacey Vetzal`,
     description: `Stacey Vetzal's aggregated writing blog`,
+    siteUrl: `https://stacey.vetzal.com`,
     social: [
       {
         name: `twitter`,
