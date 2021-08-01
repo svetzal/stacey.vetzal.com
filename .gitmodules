@@ -1,4 +1,4 @@
 [submodule "content"]
 	path = content
-	url = git@github.com:svetzal/blog-content.git
+	url = https://github.com/svetzal/blog-content.git
 	branch = master
