@@ -1,3 +1,0 @@
-# Anchor Bias
-
-- [[Functional Decomposition]]

@@ -1,3 +1,0 @@
-# Cognitive Biases
-
-- [[Anchor Bias]]
