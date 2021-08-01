@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { StaticQuery, Link } from "gatsby"
+import { StaticQuery, Link, graphql } from "gatsby"
 import { jsx, css, Styled } from "theme-ui"
 import Bio from "gatsby-theme-blog/src/components/bio"
 import _ from "lodash"

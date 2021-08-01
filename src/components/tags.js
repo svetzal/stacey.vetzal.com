@@ -17,11 +17,11 @@ export default ({
                       },
                     },
                   },
-                  pathContext,
+                  pageContext,
                   ...props
                 }) => {
-  const tagName = _.capitalize(pathContext.tag)
-  const tags = group.filter(t => t.tag === pathContext.tag)
+  const tagName = _.capitalize(pageContext.tag)
+  const tags = group.filter(t => t.tag === pageContext.tag)
   return (
     <Layout location={props.location} title={`${title}: ${tagName}`}>
       {tags.map(p => (
