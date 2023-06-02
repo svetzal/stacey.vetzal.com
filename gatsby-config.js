@@ -13,8 +13,8 @@ module.exports = {
     siteUrl: `https://stacey.vetzal.com`,
     social: [
       {
-        name: `twitter`,
-        url: `https://twitter.com/svetzal`,
+        name: `mastodon`,
+        url: `https://hachyderm.io/@svetzal`,
       },
       {
         name: `github`,
