@@ -4,6 +4,7 @@ frontend:
     preBuild:
       commands:
         - yarn install
+        - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
     build:
       commands:
         - yarn run build
