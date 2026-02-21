@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-heading leading-relaxed;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  a {
+    @apply text-primary;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-heading font-bold leading-tight;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1 { @apply text-3xl mt-8 mb-4; }
+  h2 { @apply text-2xl mt-8 mb-4; }
+  h3 { @apply text-xl mt-6 mb-3; }
+  h4 { @apply text-lg mt-6 mb-3; }
+
+  blockquote {
+    @apply border-l-4 border-primary pl-4 italic my-4;
+  }
+
+  pre {
+    @apply bg-gray-100 rounded p-4 overflow-x-auto my-4 text-sm;
+  }
+
+  code {
+    @apply bg-gray-100 rounded px-1 py-0.5 text-sm;
+  }
+
+  pre code {
+    @apply bg-transparent p-0;
+  }
+
+  ul, ol {
+    @apply my-4 pl-8;
+  }
+
+  ul { @apply list-disc; }
+  ol { @apply list-decimal; }
+
+  li { @apply mb-1; }
+
+  hr {
+    @apply my-8 border-gray-300;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  p {
+    @apply mb-4;
+  }
+}

@@ -1,6 +1,6 @@
 # stacey.vetzal.com - Site Repository
 
-This is the Gatsby site repository for [stacey.vetzal.com](https://stacey.vetzal.com) — Stacey Vetzal's personal blog ("Stacey on Software").
+This is the Astro site repository for [stacey.vetzal.com](https://stacey.vetzal.com) — Stacey Vetzal's personal blog ("Stacey on Software").
 
 ## Repository Structure
 
@@ -11,8 +11,15 @@ stacey-blog/                  # This repo (git@github.com:svetzal/stacey.vetzal.
 │   ├── assets/               # Shared assets (avatar, icons)
 │   ├── AGENTS.md             # Content-specific agent instructions
 │   └── .claude/              # Claude Code skills for content work
-├── src/                      # Gatsby theme customizations
-├── gatsby-config.js          # Site configuration
+├── src/
+│   ├── components/           # Astro components (Header, Footer)
+│   ├── layouts/              # Astro layouts (BaseLayout)
+│   ├── pages/                # Astro pages (index, post, tag, RSS)
+│   ├── plugins/              # Remark plugins (image path resolution)
+│   ├── styles/               # Global CSS (Tailwind)
+│   └── content.config.ts     # Content collection schema
+├── astro.config.mjs          # Site configuration
+├── tailwind.config.mjs       # Tailwind CSS configuration
 ├── amplify.yml               # AWS Amplify build spec
 ├── publish.sh                # Publish script (see below)
 └── AGENTS.md                 # This file
@@ -20,14 +27,14 @@ stacey-blog/                  # This repo (git@github.com:svetzal/stacey.vetzal.
 
 ## Two-Repo Architecture
 
-- **This repo** holds the Gatsby site scaffolding, theme config, and deployment pipeline.
+- **This repo** holds the Astro site scaffolding, theme config, and deployment pipeline.
 - **`content/`** is a git submodule pointing to `blog-content.git`, which holds all markdown posts, images, and content-authoring skills.
 - Content work (writing posts, generating images) happens in `content/` as an independent repo.
 - This parent repo tracks which commit of `content/` to build against.
 
 ## Publishing / Deployment
 
-Pushing to `master` on this repo triggers an AWS Amplify build that runs `yarn run build` (Gatsby) and deploys to [stacey.vetzal.com](https://stacey.vetzal.com).
+Pushing to `master` on this repo triggers an AWS Amplify build that runs `npm run build` (Astro) and deploys to [stacey.vetzal.com](https://stacey.vetzal.com).
 
 ### Publish Workflow
 
@@ -61,4 +68,4 @@ git add content && git commit -m "Update content submodule" && git push
 
 Content authors should open Claude Code in the `content/` subdirectory, not in this parent repo. The content repo has its own AGENTS.md with writing guidelines, image generation skills, and content conventions.
 
-For site framework changes (Gatsby config, theme customizations, build pipeline), work in this parent repo directly.
+For site framework changes (Astro config, theme customizations, build pipeline), work in this parent repo directly.

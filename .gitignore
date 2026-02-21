@@ -54,9 +54,15 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
+# Astro
+.astro/
+dist/
+
+# Post images copied to public at build time (derived from content submodule)
+public/20*/
+
+# Gatsby (legacy)
 .cache/
-public
 
 # Mac files
 .DS_Store

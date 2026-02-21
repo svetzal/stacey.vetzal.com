@@ -1,21 +1,21 @@
 {
-  "name": "gatsby-starter-blog-theme",
+  "name": "stacey-blog",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "clean": "gatsby clean"
+    "prebuild": "bash scripts/copy-post-images.sh",
+    "dev": "bash scripts/copy-post-images.sh && astro dev",
+    "start": "bash scripts/copy-post-images.sh && astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "license": "0BSD",
   "dependencies": {
-    "@emotion/react": "^11.7.1",
-    "gatsby": "^2.32.13",
-    "gatsby-theme-blog": "^2.1.0",
-    "lodash": "^4.17.21",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "theme-ui": "0.13.1"
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.17.3",
+    "tailwindcss": "^3.4.0",
+    "unist-util-visit": "^5.1.0"
   }
 }

@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+
+const isHome = Astro.url.pathname === '/';
+
+const allPosts = await getCollection('posts', ({ data }) => data.published);
+const tagCounts = new Map<string, number>();
+for (const post of allPosts) {
+  for (const tag of post.data.tags) {
+    tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+  }
+}
+const tags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+
+function toKebabCase(str: string): string {
+  return str.toLowerCase().replace(/\s+/g, '-');
+}
+---
+
+<header class="max-w-container mx-auto px-4 pt-8">
+  <div class="flex justify-between items-center mb-8">
+    {isHome ? (
+      <h1 class="text-2xl font-bold my-0">
+        <a href="/" class="text-inherit no-underline">Stacey on Software</a>
+      </h1>
+    ) : (
+      <p class="text-lg font-bold my-0">
+        <a href="/" class="text-primary no-underline">Stacey on Software</a>
+      </p>
+    )}
+  </div>
+  {isHome && (
+    <div class="mb-6 flex items-center gap-4">
+      <img
+        src="/avatar.jpg"
+        alt="Stacey Vetzal"
+        class="w-12 h-12 rounded-full flex-shrink-0"
+      />
+      <p class="text-sm my-0">
+        Welcome to my personal blog. Writing that I've done is collected here,
+        some is technical, some is business oriented, some is trans related.
+      </p>
+    </div>
+  )}
+  <nav class="flex justify-end flex-wrap gap-1 mb-4">
+    {tags.map(([tag]) => (
+      <a
+        href={`/tags/${toKebabCase(tag)}/`}
+        class="bg-primary text-white text-xs px-2 py-0.5 rounded no-underline shadow-sm hover:opacity-90"
+      >
+        {tag}
+      </a>
+    ))}
+  </nav>
+</header>
