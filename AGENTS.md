@@ -29,8 +29,21 @@ stacey-blog/                  # This repo (git@github.com:svetzal/stacey.vetzal.
 
 - **This repo** holds the Astro site scaffolding, theme config, and deployment pipeline.
 - **`content/`** is a git submodule pointing to `blog-content.git`, which holds all markdown posts, images, and content-authoring skills.
-- Content work (writing posts, generating images) happens in `content/` as an independent repo.
+- All work (content and site) is done from this parent repo. The submodule and parent repo must be kept in sync at all times.
 - This parent repo tracks which commit of `content/` to build against.
+
+### Pulling Content Updates
+
+When someone else has pushed content changes, update the submodule ref in the parent repo:
+
+```bash
+git submodule update --remote --recursive
+git add content && git commit -m "Update content submodule" && git push
+```
+
+### About the Content Submodule
+
+The `content/` repo has its own `AGENTS.md` with content-authoring instructions including writing style guidelines, frontmatter conventions, image generation skills, and presentation generation. Since `content/` is a submodule within this repo, those instructions are available when working from here.
 
 ## Publishing / Deployment
 
@@ -66,6 +79,4 @@ git add content && git commit -m "Update content submodule" && git push
 
 ## Development
 
-Content authors should open Claude Code in the `content/` subdirectory, not in this parent repo. The content repo has its own AGENTS.md with writing guidelines, image generation skills, and content conventions.
-
-For site framework changes (Astro config, theme customizations, build pipeline), work in this parent repo directly.
+All work — both content authoring and site framework changes — is done from this parent repo. When making changes to files in `content/`, remember that it is a separate git repository (submodule). Both repos must be committed and pushed to keep them in sync. Use `./publish.sh` to handle this automatically.
