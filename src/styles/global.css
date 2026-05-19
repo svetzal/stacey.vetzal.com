@@ -51,6 +51,30 @@
     @apply my-8 border-gray-300;
   }
 
+  table {
+    @apply w-full my-6 border-collapse text-sm;
+  }
+
+  thead {
+    @apply border-b-2 border-heading;
+  }
+
+  th {
+    @apply text-left font-semibold px-4 py-3 align-bottom;
+  }
+
+  td {
+    @apply px-4 py-3 align-top border-b border-gray-200;
+  }
+
+  tbody tr:nth-child(even) {
+    @apply bg-gray-50;
+  }
+
+  tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
   img {
     @apply max-w-full h-auto;
   }
