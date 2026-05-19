@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(./publish.sh Ground Intent in Motion with personal history, correct Mojility timeline:*)"
     ]
   }
 }

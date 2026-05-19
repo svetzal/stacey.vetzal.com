@@ -77,6 +77,10 @@ git submodule update --remote --recursive
 git add content && git commit -m "Update content submodule" && git push
 ```
 
+## Obsidian Vault (Source Material)
+
+Stacey's personal knowledgebase is an Obsidian vault at `~/Work/HostedVault/`. It contains research notes, drafts, outlines, reference material, and personal writing used as seed material for blog posts. When Stacey references documents that aren't in this repo, look for them there.
+
 ## Development
 
 All work — both content authoring and site framework changes — is done from this parent repo. When making changes to files in `content/`, remember that it is a separate git repository (submodule). Both repos must be committed and pushed to keep them in sync. Use `./publish.sh` to handle this automatically.
