@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import remarkResolveImages from './src/plugins/remark-resolve-images.mjs';
 
 export default defineConfig({
-  site: 'https://stacey.vetzal.com',
+  site: 'https://stacey.vetzal.ca',
   integrations: [tailwind(), sitemap()],
   trailingSlash: 'always',
   markdown: {

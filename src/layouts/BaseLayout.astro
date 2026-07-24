@@ -14,6 +14,7 @@ const { title, description, image, imageAlt } = Astro.props;
 const siteTitle = 'Stacey on Software';
 const pageTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 const metaDescription = description || "Stacey Vetzal's aggregated writing blog";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -23,6 +24,7 @@ const metaDescription = description || "Stacey Vetzal's aggregated writing blog"
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
