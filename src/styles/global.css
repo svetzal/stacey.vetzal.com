@@ -83,3 +83,30 @@
     @apply mb-4;
   }
 }
+
+/* Kept outside Tailwind layers: post classes live in the content submodule. */
+aside.hardware-detail {
+  @apply my-8 border-l-4 border-primary bg-gray-50 p-4 sm:p-6;
+}
+
+aside.hardware-detail > :first-child {
+  @apply mt-0;
+}
+
+aside.hardware-detail > :last-child {
+  @apply mb-0;
+}
+
+aside.hardware-detail a {
+  @apply underline underline-offset-2;
+}
+
+aside.hardware-detail a:focus-visible {
+  @apply outline outline-2 outline-offset-4 outline-heading;
+}
+
+@media print {
+  aside.hardware-detail {
+    background: transparent;
+  }
+}
