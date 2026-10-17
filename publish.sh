@@ -30,8 +30,12 @@ git submodule update --remote --recursive
 if [ -n "$(git status --porcelain)" ]; then
   git add content
   git commit -m "Update content submodule"
+fi
+
+# Earlier work may already be committed even when the working tree is clean.
+if [ "$(git rev-list --count @{u}..HEAD)" -gt 0 ]; then
   git push
   echo "Site deploy triggered."
 else
-  echo "Parent repo already at latest content. Nothing to deploy."
+  echo "Parent repo already pushed. Nothing to deploy."
 fi
